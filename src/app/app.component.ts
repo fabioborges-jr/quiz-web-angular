@@ -7,7 +7,7 @@ import { QuizComponent } from './components/quiz/quiz.component';
   standalone: true,
   imports: [RouterOutlet, QuizComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss', './reset.scss']
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'quiz-web-angular';
