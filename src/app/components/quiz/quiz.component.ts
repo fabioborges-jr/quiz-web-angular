@@ -24,6 +24,8 @@ export class QuizComponent implements OnInit{
   }
 
   handleOptionButton(){
-    
+    this.questionIndex+=1
+    this.question=questions[this.questionIndex].question
+    this.options=questions[this.questionIndex].options
   }
 }

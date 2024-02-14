@@ -1,4 +1,8 @@
 <h2>{{question}}</h2>
 <div>
-    <button *ngFor="let option of options">{{option.name}}</button>
+    <button
+    *ngFor="let option of options"
+    (click)="handleOptionButton()">
+    {{option.name}}
+    </button>
 </div>
