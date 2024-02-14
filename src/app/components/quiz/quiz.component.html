@@ -1,7 +1,4 @@
 <h2>{{question}}</h2>
 <div>
-    <button>Aqui vai ser a opção</button>
-    <button>Aqui vai ser a opção</button>
-    <button>Aqui vai ser a opção</button>
-    <button>Aqui vai ser a opção</button>
+    <button *ngFor="let option of options">{{option.name}}</button>
 </div>
