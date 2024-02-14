@@ -12,7 +12,7 @@ import { NgFor } from '@angular/common';
 export class QuizComponent implements OnInit{
   questionIndex:number=0
   question?:string
-  options?: {
+  options?:{
     id: number
     name: string
     alias: string
@@ -21,5 +21,9 @@ export class QuizComponent implements OnInit{
   ngOnInit(): void {
     this.question=questions[this.questionIndex].question
     this.options=questions[this.questionIndex].options
+  }
+
+  handleOptionButton(){
+    
   }
 }
