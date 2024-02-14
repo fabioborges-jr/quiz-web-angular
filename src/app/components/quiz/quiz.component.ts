@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {questions, results} from "../../../assets/data/quizz_questions.json"
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'quiz',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss'
 })
@@ -17,6 +17,7 @@ export class QuizComponent implements OnInit{
     name: string
     alias: string
   }[]
+  finish:boolean=false
   
   ngOnInit(): void {
     this.question=questions[this.questionIndex].question
@@ -24,8 +25,12 @@ export class QuizComponent implements OnInit{
   }
 
   handleOptionButton(){
-    this.questionIndex+=1
-    this.question=questions[this.questionIndex].question
-    this.options=questions[this.questionIndex].options
+    if(this.questionIndex+1<questions.length){
+      this.questionIndex+=1
+      this.question=questions[this.questionIndex].question
+      this.options=questions[this.questionIndex].options
+    }else{
+      this.finish=true
+    }
   }
 }

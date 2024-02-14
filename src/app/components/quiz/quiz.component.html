@@ -1,5 +1,5 @@
-<h2>{{question}}</h2>
-<div>
+<h2 *ngIf="!finish">{{question}}</h2>
+<div *ngIf="!finish">
     <button
     *ngFor="let option of options"
     (click)="handleOptionButton()">
