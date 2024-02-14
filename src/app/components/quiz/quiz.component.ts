@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-quiz',
+  selector: 'quiz',
   standalone: true,
   imports: [],
   templateUrl: './quiz.component.html',
