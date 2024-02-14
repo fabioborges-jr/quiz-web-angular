@@ -18,19 +18,21 @@ export class QuizComponent implements OnInit{
     alias: string
   }[]
   finish:boolean=false
+  answers:string[]=[]
   
   ngOnInit(): void {
     this.question=questions[this.questionIndex].question
     this.options=questions[this.questionIndex].options
   }
 
-  handleOptionButton(){
+  handleOptionButton(alias:string){
     if(this.questionIndex+1<questions.length){
       this.questionIndex+=1
       this.question=questions[this.questionIndex].question
       this.options=questions[this.questionIndex].options
     }else{
       this.finish=true
+      this.answers.push(alias)
     }
   }
 }

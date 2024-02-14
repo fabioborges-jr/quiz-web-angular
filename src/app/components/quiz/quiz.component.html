@@ -2,7 +2,7 @@
 <div *ngIf="!finish">
     <button
     *ngFor="let option of options"
-    (click)="handleOptionButton()">
+    (click)="handleOptionButton(option.alias)">
     {{option.name}}
     </button>
 </div>
