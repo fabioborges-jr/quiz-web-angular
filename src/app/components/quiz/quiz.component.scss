@@ -1,0 +1,22 @@
+*{
+    width: 100%;
+}
+
+h2{
+    margin-top: 2rem;
+    background-color: #393E46;
+
+    padding: 8rem;
+    text-align: center;
+}
+
+div{
+    display: flex;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+
+    button{
+        padding: 1rem;
+        width: 50%;
+    }
+}
