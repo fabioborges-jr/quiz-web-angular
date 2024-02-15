@@ -19,6 +19,11 @@ export class QuizComponent implements OnInit{
   }[]
   finish:boolean=false
   answers:string[]=[]
+  result?:string
+  results?:{
+    A: string
+    B: string
+  }
   
   ngOnInit(): void {
     this.question=questions[this.questionIndex].question
@@ -31,11 +36,27 @@ export class QuizComponent implements OnInit{
       this.questionIndex+=1
       this.question=questions[this.questionIndex].question
       this.options=questions[this.questionIndex].options
-      console.log(this.questionIndex)
-      console.log(this.answers)
     }else{
       this.answers.push(alias)
+      this.calculateResult(this.answers)
       this.finish=true
     }
+  }
+
+  calculateResult(answers:string[]){
+    let countA:number=0, countB:number=0
+    answers.map((answer)=>{
+      if (answer==="A"){
+        countA+=1
+      } else {
+        countB+=1
+      }
+    })
+    if(countA>=countB){
+      this.result=results.A
+    }else{
+      this.result=results.B
+    }
+    
   }
 }
