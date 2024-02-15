@@ -27,12 +27,15 @@ export class QuizComponent implements OnInit{
 
   handleOptionButton(alias:string){
     if(this.questionIndex+1<questions.length){
+      this.answers.push(alias)
       this.questionIndex+=1
       this.question=questions[this.questionIndex].question
       this.options=questions[this.questionIndex].options
+      console.log(this.questionIndex)
+      console.log(this.answers)
     }else{
-      this.finish=true
       this.answers.push(alias)
+      this.finish=true
     }
   }
 }
